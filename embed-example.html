@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Demo Dealer Website — With Affordability Widget</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      margin: 0;
+      background: #f0f0f0;
+    }
+    .demo-header {
+      background: #1a3c5e;
+      color: white;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .demo-header h1 { font-size: 20px; margin: 0; }
+    .demo-nav { display: flex; gap: 20px; }
+    .demo-nav a { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 14px; }
+    .demo-content {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 30px;
+    }
+    .demo-inventory h2 { font-size: 24px; margin-bottom: 20px; }
+    .demo-car-card {
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 16px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+    .demo-car-card h3 { margin: 0 0 8px; font-size: 16px; }
+    .demo-car-card p { margin: 0; color: #666; font-size: 14px; }
+    .demo-sidebar { position: sticky; top: 20px; }
+    @media (max-width: 800px) {
+      .demo-content { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Fake dealer site header -->
+  <div class="demo-header">
+    <h1>Riverside Auto Group</h1>
+    <div class="demo-nav">
+      <a href="#">Inventory</a>
+      <a href="#">Finance</a>
+      <a href="#">Service</a>
+      <a href="#">Contact</a>
+    </div>
+  </div>
+
+  <div class="demo-content">
+    <!-- Fake inventory column -->
+    <div class="demo-inventory">
+      <h2>Pre-Owned Inventory</h2>
+      <div class="demo-car-card">
+        <h3>2022 Toyota RAV4 XLE</h3>
+        <p>35,000 mi &middot; $29,500 &middot; Magnetic Gray</p>
+      </div>
+      <div class="demo-car-card">
+        <h3>2021 Honda CR-V EX</h3>
+        <p>42,000 mi &middot; $27,800 &middot; Crystal Black</p>
+      </div>
+      <div class="demo-car-card">
+        <h3>2023 Mazda CX-5 Select</h3>
+        <p>18,000 mi &middot; $31,200 &middot; Soul Red</p>
+      </div>
+      <div class="demo-car-card">
+        <h3>2020 Ford Escape SE</h3>
+        <p>55,000 mi &middot; $22,400 &middot; Oxford White</p>
+      </div>
+    </div>
+
+    <!-- Widget embedded in sidebar -->
+    <div class="demo-sidebar">
+      <!--
+        EMBED INSTRUCTIONS FOR DEALERS:
+        1. Add this div where you want the widget to appear
+        2. Configure via data-* attributes:
+           - data-dealer-name: Your dealership name
+           - data-primary-color: Brand color (hex)
+           - data-accent-color: Accent color (hex)
+           - data-logo-url: URL to your logo
+        3. Add the script tag pointing to affordability-widget.iife.js
+      -->
+      <div
+        id="affordability-widget"
+        data-dealer-name="Riverside Auto Group"
+        data-primary-color="#1a3c5e"
+        data-accent-color="#27ae60"
+      ></div>
+      <script type="module" src="/src/main.tsx"></script>
+    </div>
+  </div>
+
+</body>
+</html>

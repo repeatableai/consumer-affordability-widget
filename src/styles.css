@@ -1,0 +1,738 @@
+/* ── Smart Payment & Protection Guide ─────────────────────────────────────── */
+/* Tone: practical, calm, transparent, non-judgmental, confidence-building     */
+
+:root {
+  --aw-primary: #1a5276;
+  --aw-primary-light: #2980b9;
+  --aw-accent: #27ae60;
+  --aw-warning: #e67e22;
+  --aw-danger: #c0392b;
+  --aw-bg: #f8f9fa;
+  --aw-card: #ffffff;
+  --aw-text: #2c3e50;
+  --aw-text-light: #5d6d7e;
+  --aw-border: #dfe6e9;
+  --aw-radius: 10px;
+  --aw-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Reset for widget embedding */
+.aw-widget * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.aw-widget {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  color: var(--aw-text);
+  background: var(--aw-bg);
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 24px;
+  line-height: 1.55;
+  font-size: 15px;
+}
+
+/* ── Header ───────────────────────────────────────────────────────────────── */
+
+.aw-header {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.aw-header h1 {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--aw-primary);
+  margin-bottom: 6px;
+}
+
+.aw-header p {
+  color: var(--aw-text-light);
+  font-size: 14px;
+}
+
+/* ── Progress Bar ─────────────────────────────────────────────────────────── */
+
+.aw-progress {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 28px;
+}
+
+.aw-progress-step {
+  flex: 1;
+  height: 5px;
+  border-radius: 3px;
+  background: var(--aw-border);
+  transition: background 0.3s;
+}
+
+.aw-progress-step.active {
+  background: var(--aw-primary-light);
+}
+
+.aw-progress-step.completed {
+  background: var(--aw-accent);
+}
+
+/* ── Cards ────────────────────────────────────────────────────────────────── */
+
+.aw-card {
+  background: var(--aw-card);
+  border-radius: var(--aw-radius);
+  box-shadow: var(--aw-shadow);
+  padding: 24px;
+  margin-bottom: 20px;
+}
+
+.aw-card h2 {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--aw-primary);
+  margin-bottom: 16px;
+}
+
+.aw-card h3 {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--aw-text);
+  margin-bottom: 10px;
+}
+
+/* ── Form Elements ────────────────────────────────────────────────────────── */
+
+.aw-field {
+  margin-bottom: 18px;
+}
+
+.aw-field label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--aw-text);
+  margin-bottom: 5px;
+}
+
+.aw-field .aw-hint {
+  font-size: 12px;
+  color: var(--aw-text-light);
+  margin-bottom: 5px;
+}
+
+.aw-field input,
+.aw-field select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--aw-border);
+  border-radius: 6px;
+  font-size: 15px;
+  color: var(--aw-text);
+  background: #fff;
+  transition: border-color 0.2s;
+}
+
+.aw-field input:focus,
+.aw-field select:focus {
+  outline: none;
+  border-color: var(--aw-primary-light);
+  box-shadow: 0 0 0 3px rgba(41, 128, 185, 0.12);
+}
+
+.aw-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.aw-toggle-group {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.aw-toggle {
+  padding: 8px 16px;
+  border: 1px solid var(--aw-border);
+  border-radius: 20px;
+  background: #fff;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s;
+  color: var(--aw-text);
+}
+
+.aw-toggle:hover {
+  border-color: var(--aw-primary-light);
+}
+
+.aw-toggle.selected {
+  background: var(--aw-primary);
+  color: #fff;
+  border-color: var(--aw-primary);
+}
+
+/* ── Buttons ──────────────────────────────────────────────────────────────── */
+
+.aw-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.aw-btn-primary {
+  background: var(--aw-primary);
+  color: #fff;
+}
+
+.aw-btn-primary:hover {
+  background: var(--aw-primary-light);
+}
+
+.aw-btn-secondary {
+  background: transparent;
+  color: var(--aw-primary);
+  border: 1px solid var(--aw-border);
+}
+
+.aw-btn-secondary:hover {
+  border-color: var(--aw-primary-light);
+}
+
+.aw-btn-accent {
+  background: var(--aw-accent);
+  color: #fff;
+}
+
+.aw-btn-accent:hover {
+  background: #219a52;
+}
+
+.aw-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 24px;
+  gap: 12px;
+}
+
+/* ── Payment Fit Meter ────────────────────────────────────────────────────── */
+
+.aw-meter {
+  margin: 20px 0;
+}
+
+.aw-meter-bar {
+  height: 14px;
+  border-radius: 7px;
+  background: linear-gradient(to right, var(--aw-accent) 0%, var(--aw-accent) 40%, var(--aw-warning) 40%, var(--aw-warning) 70%, var(--aw-danger) 70%, var(--aw-danger) 100%);
+  position: relative;
+  overflow: visible;
+}
+
+.aw-meter-marker {
+  position: absolute;
+  top: -6px;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--aw-card);
+  border: 3px solid var(--aw-primary);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  transform: translateX(-50%);
+  transition: left 0.5s ease;
+}
+
+.aw-meter-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  font-size: 12px;
+  color: var(--aw-text-light);
+}
+
+.aw-fit-label {
+  display: inline-block;
+  padding: 4px 14px;
+  border-radius: 14px;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.aw-fit-comfortable { background: #d5f5e3; color: #1e8449; }
+.aw-fit-stretch { background: #fdebd0; color: #b9770e; }
+.aw-fit-caution { background: #fadbd8; color: #a93226; }
+
+/* ── Ownership Snapshot ───────────────────────────────────────────────────── */
+
+.aw-snapshot-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.aw-snapshot-item {
+  padding: 14px;
+  background: var(--aw-bg);
+  border-radius: 8px;
+  text-align: center;
+}
+
+.aw-snapshot-item .aw-amount {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--aw-primary);
+}
+
+.aw-snapshot-item .aw-label {
+  font-size: 12px;
+  color: var(--aw-text-light);
+  margin-top: 2px;
+}
+
+.aw-snapshot-total {
+  padding: 16px;
+  background: var(--aw-primary);
+  color: #fff;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.aw-snapshot-total .aw-amount {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.aw-snapshot-total .aw-label {
+  font-size: 12px;
+  opacity: 0.85;
+}
+
+/* ── Suggestions / Recommendations ────────────────────────────────────────── */
+
+.aw-suggestion {
+  padding: 14px 16px;
+  border-left: 4px solid var(--aw-primary-light);
+  background: var(--aw-bg);
+  border-radius: 0 8px 8px 0;
+  margin-bottom: 12px;
+}
+
+.aw-suggestion.high {
+  border-left-color: var(--aw-danger);
+}
+
+.aw-suggestion.medium {
+  border-left-color: var(--aw-warning);
+}
+
+.aw-suggestion.low {
+  border-left-color: var(--aw-accent);
+}
+
+.aw-suggestion p {
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.aw-suggestion .aw-impact {
+  font-size: 12px;
+  color: var(--aw-text-light);
+  font-style: italic;
+}
+
+/* ── Protection Cards ─────────────────────────────────────────────────────── */
+
+.aw-protection {
+  padding: 16px;
+  border: 1px solid var(--aw-border);
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.aw-protection-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.aw-protection-name {
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.aw-protection-badge {
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.aw-badge-recommended { background: #d5f5e3; color: #1e8449; }
+.aw-badge-worth-considering { background: #d6eaf8; color: #1a5276; }
+.aw-badge-optional { background: #fdebd0; color: #b9770e; }
+.aw-badge-not-priority { background: #eaecee; color: #5d6d7e; }
+
+.aw-protection p {
+  font-size: 14px;
+  color: var(--aw-text);
+  line-height: 1.5;
+}
+
+.aw-protection .aw-payment-impact {
+  font-size: 12px;
+  color: var(--aw-text-light);
+  margin-top: 6px;
+}
+
+.aw-protection .aw-warning {
+  margin-top: 10px;
+  padding: 10px 12px;
+  background: #fef9e7;
+  border-radius: 6px;
+  font-size: 13px;
+  color: #b9770e;
+  border-left: 3px solid var(--aw-warning);
+}
+
+/* ── Lead Summary ─────────────────────────────────────────────────────────── */
+
+.aw-summary-section {
+  margin-bottom: 18px;
+}
+
+.aw-summary-section h3 {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--aw-primary);
+  margin-bottom: 6px;
+}
+
+.aw-summary-quote {
+  padding: 16px;
+  background: var(--aw-bg);
+  border-radius: 8px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--aw-text);
+  border-left: 4px solid var(--aw-primary);
+  margin-bottom: 20px;
+}
+
+.aw-checklist {
+  list-style: none;
+}
+
+.aw-checklist li {
+  padding: 6px 0;
+  font-size: 14px;
+  padding-left: 24px;
+  position: relative;
+}
+
+.aw-checklist li::before {
+  content: '\2713';
+  position: absolute;
+  left: 0;
+  color: var(--aw-accent);
+  font-weight: 700;
+}
+
+.aw-tag-list {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.aw-tag {
+  padding: 4px 12px;
+  background: var(--aw-bg);
+  border-radius: 14px;
+  font-size: 12px;
+  color: var(--aw-text);
+  border: 1px solid var(--aw-border);
+}
+
+/* ── Lead Form ────────────────────────────────────────────────────────────── */
+
+.aw-lead-form {
+  margin-top: 20px;
+  padding: 20px;
+  background: var(--aw-bg);
+  border-radius: 8px;
+}
+
+.aw-lead-form h3 {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+/* ── Step Transitions ─────────────────────────────────────────────────────── */
+
+.aw-step-enter {
+  opacity: 0;
+  transform: translateY(16px);
+}
+
+.aw-step-visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+/* ── What-If Simulator ────────────────────────────────────────────────────── */
+
+.aw-slider-group {
+  margin-bottom: 18px;
+}
+
+.aw-slider-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 6px;
+}
+
+.aw-slider-header label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--aw-text);
+}
+
+.aw-slider-header .aw-slider-value {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--aw-primary);
+}
+
+.aw-slider {
+  width: 100%;
+  height: 6px;
+  -webkit-appearance: none;
+  appearance: none;
+  border-radius: 3px;
+  background: var(--aw-border);
+  outline: none;
+}
+
+.aw-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--aw-primary);
+  cursor: pointer;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+}
+
+.aw-slider::-moz-range-thumb {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--aw-primary);
+  cursor: pointer;
+  border: none;
+}
+
+/* ── Vehicle Comparison ───────────────────────────────────────────────────── */
+
+.aw-compare-grid {
+  display: grid;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.aw-compare-grid.cols-2 { grid-template-columns: 1fr 1fr; }
+.aw-compare-grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+
+.aw-compare-col {
+  background: var(--aw-bg);
+  border-radius: 8px;
+  padding: 16px;
+  text-align: center;
+}
+
+.aw-compare-col.best {
+  border: 2px solid var(--aw-accent);
+}
+
+.aw-compare-col h4 {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--aw-primary);
+  margin-bottom: 12px;
+}
+
+.aw-compare-row-label {
+  font-size: 12px;
+  color: var(--aw-text-light);
+  margin-top: 10px;
+}
+
+.aw-compare-row-value {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--aw-text);
+}
+
+.aw-best-badge {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 10px;
+  font-size: 11px;
+  font-weight: 600;
+  background: #d5f5e3;
+  color: #1e8449;
+  margin-bottom: 8px;
+}
+
+/* ── Biweekly Savings ─────────────────────────────────────────────────────── */
+
+.aw-savings-highlight {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 12px;
+  margin: 16px 0;
+}
+
+.aw-savings-item {
+  text-align: center;
+  padding: 14px;
+  background: var(--aw-bg);
+  border-radius: 8px;
+}
+
+.aw-savings-item .aw-amount {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--aw-accent);
+}
+
+.aw-savings-item .aw-label {
+  font-size: 12px;
+  color: var(--aw-text-light);
+  margin-top: 2px;
+}
+
+/* ── Dealer View ──────────────────────────────────────────────────────────── */
+
+.aw-dealer-view {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 24px;
+  color: var(--aw-text);
+}
+
+.aw-dealer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 16px;
+  border-bottom: 2px solid var(--aw-primary);
+  margin-bottom: 20px;
+}
+
+.aw-dealer-header h1 {
+  font-size: 18px;
+  color: var(--aw-primary);
+}
+
+.aw-dealer-score {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.aw-dealer-score-num {
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.aw-dealer-score-label {
+  font-size: 11px;
+  color: var(--aw-text-light);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.aw-dealer-section {
+  margin-bottom: 18px;
+}
+
+.aw-dealer-section h3 {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--aw-text-light);
+  margin-bottom: 6px;
+  border-bottom: 1px solid var(--aw-border);
+  padding-bottom: 4px;
+}
+
+.aw-dealer-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 20px;
+}
+
+.aw-dealer-item label {
+  font-size: 11px;
+  color: var(--aw-text-light);
+}
+
+.aw-dealer-item p {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* ── Compliance ───────────────────────────────────────────────────────────── */
+
+.aw-disclaimer {
+  margin-top: 20px;
+  padding: 14px 16px;
+  background: var(--aw-bg);
+  border-radius: 6px;
+  font-size: 11px;
+  color: var(--aw-text-light);
+  line-height: 1.6;
+}
+
+.aw-disclaimer strong {
+  color: var(--aw-text);
+}
+
+/* ── Print Styles ─────────────────────────────────────────────────────────── */
+
+@media print {
+  .aw-widget { max-width: 100%; padding: 0; }
+  .aw-btn, .aw-actions, .aw-lead-form, .aw-progress { display: none !important; }
+  .aw-card { box-shadow: none; border: 1px solid #ddd; page-break-inside: avoid; }
+}
+
+/* ── Responsive ───────────────────────────────────────────────────────────── */
+
+@media (max-width: 600px) {
+  .aw-widget { padding: 16px; }
+  .aw-row { grid-template-columns: 1fr; }
+  .aw-snapshot-grid { grid-template-columns: 1fr; }
+  .aw-savings-highlight { grid-template-columns: 1fr; }
+  .aw-compare-grid.cols-2,
+  .aw-compare-grid.cols-3 { grid-template-columns: 1fr; }
+  .aw-dealer-grid { grid-template-columns: 1fr; }
+  .aw-actions { flex-direction: column; }
+  .aw-actions .aw-btn { width: 100%; }
+}
